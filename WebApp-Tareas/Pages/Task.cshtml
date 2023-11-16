@@ -1,0 +1,122 @@
+﻿@page
+@model WebApp_Tareas.Pages.Pages_Task
+@{
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="~/js/task.js"></script>
+@*
+    Falta Implementar en la página Task.cshtml el filtro en la lista de tareas según su estado 
+    de completada y pendiente y el radiobutton para el cambio en completado.
+*@
+<h3>LISTA DE TAREAS</h3>
+<br />
+<br />
+
+
+<div id="Task-Container">
+<table class="table">
+    <tr>
+        <th>Id Tarea</th>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Fecha de Registro</th>
+        <th>Completada</th>
+        <th>Fecha de Terminación</th>
+        <th>Acciones</th>
+    </tr>
+</table>
+</div>
+<br />
+<br />
+    <h5>TAREAS COMPLETADAS</h5>
+    <br />
+    <br />
+    <div id="Task-Container-Complete">
+        <table class="table">
+            <tr>
+                <th>Id Tarea</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Fecha de Registro</th>
+                <th>Completada</th>
+                <th>Fecha de Terminación</th>
+                <th>Acciones</th>
+            </tr>
+        </table>
+
+    </div>
+    <br />
+<h5>TAREAS PENDIENTES</h5>
+<br />
+<br />
+<div id="Task-Container-Pending">
+    <table class="table">
+        <tr>
+            <th>Id Tarea</th>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Fecha de Registro</th>
+            <th>Completada</th>
+            <th>Fecha de Terminación</th>
+            <th>Acciones</th>
+        </tr>
+    </table>
+
+</div>
+
+<h3>Editar Tarea</h3>
+<br />
+
+<form id="EditTask">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Id de la tarea a editar</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control-plaintext" id="txtId" value="Ingrese el Id">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Titulo</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control-plaintext" id="txtTitulo" value="Ingrese o modifique titulo">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label mt-4">Ingrese o modifique la descripción de su tarea (250 caracteres máximo)</label>
+        <textarea class="form-control" id="txtDescripcion" rows="3"></textarea>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Fecha Registro</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control-plaintext" id="txtFechaRegistro">
+        </div>
+    </div>
+    <fieldset class="form-group">
+        <legend class="mt-4">Modifique el Estado de la Tarea</legend>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked="">
+            <label class="form-check-label" for="optionsRadios1">
+                Seleccione 1 si ya fue completada.
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="2">
+            <label class="form-check-label" for="optionsRadios2">
+                Selecciones 0 si aún no se ha completado.
+            </label>
+        </div>
+    </fieldset>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Fecha Finalización</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control-plaintext" id="txtTareaCompletada">
+        </div>
+    </div>
+    <br />
+    <button type="button" class="btn btn-outline-warning" onclick="EditarTarea()">Modificar</button>
+    <button type="button" class="btn btn-outline-danger" onclick="eliminarTarea()">Eliminar</button>
+</form>
+

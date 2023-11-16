@@ -1,0 +1,21 @@
+﻿@page
+@model WebApp_Tareas.Pages.Pages_Index
+@{
+    ViewData["Title"] = "Home page";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a la Prueba Técnica</h1>
+    <br />
+    <h4>A continuación se muestra la lista de tareas...</h4>
+    <br />
+    <br />
+    <a type="button" class="btn btn-outline-warning" asp-area="" asp-page="/Task">Mis Tareas</a>
+    <br />
+    <br />
+    <a type="button" class="btn btn-outline-warning" asp-area="" asp-page="/CreateTask">+ Tarea</a>
+</div>

@@ -1,0 +1,60 @@
+﻿@page
+@model WebApp_Tareas.Pages.Pages_CreateTask
+@{
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="~/js/task.js"></script>
+
+<h3>Crear Nueva Tarea</h3>
+<br />
+
+<form id="createTask">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Titulo</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control-plaintext" id="txtTitulo" value="Ingrese un titulo">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label mt-4">Ingrese la descripción de su tarea (250 caracteres máximo)</label>
+        <textarea class="form-control" id="txtDescripcion" rows="3"></textarea>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Fecha Registro</label>
+        <div class="col-sm-10">
+            <input type="datetime" class="form-control-plaintext" id="txtFechaRegistro">
+        </div>
+    </div>
+    <fieldset class="form-group">
+        <legend class="mt-4">Estado de la Tarea</legend>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="optionsRadios" id="optionsStatus" value="1">
+            <label class="form-check-label">
+               Seleccione 1 si ya fue completada.
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="optionsRadios" id="optionsStatus" value="0" checked="">
+            <label class="form-check-label">
+                Selecciones 0 si aún no se ha completado.
+            </label>
+        </div>
+    </fieldset>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Fecha Finalización</label>
+        <div class="col-sm-10">
+            <input type="datetime" class="form-control-plaintext" id="txtTareaCompletada">
+        </div>
+    </div>
+    <br />
+    <button type="button" class="btn btn-outline-success" onclick="CrearTarea()">Crear</button>
+</form>
+
+<script>
+    obtenerTodasLasTareas();
+</script>
